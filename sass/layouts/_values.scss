@@ -1,0 +1,40 @@
+.values__item {
+  width: 100%;
+
+  @include for-tablet {
+    flex-basis: calc((100% - #{$card-set-gap} * 2) / 2);
+    /* margin-left: auto;
+    margin-right: auto; */
+  }
+
+  @include for-desktop {
+    flex-basis: calc((100% - #{$card-set-gap} * 4) / 4);
+  }
+}
+
+.values__bg-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  height: 120px;
+  background-color: $light-bg;
+}
+
+.values__point {
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.values__text {
+  line-height: 1.71;
+  color: $alt-text-color;
+}

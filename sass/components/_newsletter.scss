@@ -1,0 +1,105 @@
+.newsletter__form {
+  @include phone-and-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.newsletter__title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $alt-title-color;
+
+  @include phone-and-tablet {
+    text-align: center;
+  }
+
+  @include for-desktop {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.newsletter__mail {
+  margin: 0;
+  padding: 15px 16px;
+  height: 50px;
+
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: $dark-bg;
+
+  transition: border-color $animation, outline $animation;
+
+  @include phone-and-tablet {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 450px;
+  }
+  @include for-tablet {
+    width: 450px;
+  }
+
+  @include for-desktop {
+    width: 358px;
+  }
+
+  &::placeholder {
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  &:focus-within {
+    outline: $accent-color;
+    border-color: $accent-color;
+  }
+}
+
+.newsletter__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 28px;
+  width: 200px;
+  height: 50px;
+
+  font-weight: 700;
+  line-height: 1.87;
+
+  color: $white-text-color;
+  background-color: $accent-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  @include phone-and-tablet {
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  @include for-desktop {
+    margin-left: 12px;
+  }
+}
+
+.newsletter__icon {
+  margin-left: 10px;
+}

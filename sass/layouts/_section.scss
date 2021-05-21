@@ -1,0 +1,29 @@
+.section {
+  @include phone-and-tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @include for-desktop {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.section__title {
+  text-align: center;
+  @include phone-and-tablet {
+    margin-bottom: 30px;
+
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 1.18;
+  }
+
+  @include for-desktop {
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.67;
+  }
+}

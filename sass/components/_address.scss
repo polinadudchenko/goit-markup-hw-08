@@ -1,0 +1,19 @@
+.address {
+  font-style: inherit;
+}
+
+.address__item {
+  line-height: 1.71;
+}
+
+.address__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.address__item--white {
+  color: $alt-title-color;
+}
+
+.address__contacts {
+  color: rgba(255, 255, 255, 0.6);
+}

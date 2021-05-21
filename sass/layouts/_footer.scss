@@ -1,0 +1,40 @@
+.footer {
+  background-color: $dark-bg;
+}
+
+/* .footer__thumb {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: flex;
+    align-items: baseline;
+    margin-right: 165px;
+  }
+}
+ */
+.footer__info {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @include for-tablet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  @include for-desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+.footer__address {
+  @include phone-and-tablet {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
+
+.footer__socials {
+  @include for-phone {
+    margin-bottom: 60px;
+  }
+}
