@@ -12,12 +12,18 @@
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
-    <!-- <header class="header">
+    <header class="header">
       <div class="container header__flex">
         <a class="link logo logo--nohover logo--nofocus header__logo" href="./index.html"
           ><span class="logo--blue">Web</span>Studio</a
         >
         <nav class="site-nav">
+          <button class="site-nav__button" type="button" aria-expanded="false" data-menu-button>
+            <svg class="site-nav__svg" width="24" height="16" aria-label="Swith to mobile menu">
+              <use class="site-nav__menu" href="./images/icons.svg#menu_24px"></use>
+              <use class="site-nav__close" href="./images/icons.svg#close_24px"></use>
+            </svg>
+          </button>
           <ul class="list site-nav__list">
             <li class="site-nav__item">
               <a class="link site-nav__link" href="./index.html">Studio</a>
@@ -25,13 +31,13 @@
             <li class="site-nav__item">
               <a class="link site-nav__link site-nav__link--current" href="./portfolio.html">Portfolio</a>
             </li>
-            <li class="site-nav__item"><a class="link site-nav__link" href="">Contacts</a></li>
+            <li class="site-nav__item"><a class="link site-nav__link" href="#contacts">Contacts</a></li>
           </ul>
         </nav>
         <ul class="list contacts header-contacts">
           <li class="contacts__item">
             <a class="contacts__link link" href="mailto:info@devstudio.com">
-              <svg class="contacts__icon" width="16" height="12">
+              <svg class="contacts__icon contacts__icon--mail">
                 <use href="./images/icons.svg#mail"></use>
               </svg>
               info@devstudio.com
@@ -39,7 +45,7 @@
           </li>
           <li class="contacts__item">
             <a class="contacts__link link" href="tel:+380961111111">
-              <svg class="contacts__icon" width="10" height="12">
+              <svg class="contacts__icon contacts__icon--tel">
                 <use href="./images/icons.svg#tel"></use>
               </svg>
               +38 096 111 11 11
@@ -47,7 +53,48 @@
           </li>
         </ul>
       </div>
-    </header> -->
+      <div class="mobile-menu" data-menu>
+        <ul class="list mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a href="./index.html" class="link mobile-menu__link">Studio</a>
+          </li>
+          <li class="mobile-menu__item mobile-menu__link--current">
+            <a href="./portfolio.html" class="link mobile-menu__link">Portfolio</a>
+          </li>
+          <li class="mobile-menu__item"><a href="#contacts" class="link mobile-menu__link">Contacts</a></li>
+        </ul>
+        <div class="mobile-menu__bottom">
+          <ul class="list mobile-menu__contacts">
+            <li class="mobile-menu__contscts-item">
+              <a href="tel:+380961111111" class="link mobile-menu__contacts-link mobile-menu__contacts-link--tel"
+                >+38 096 111 11 11</a
+              >
+            </li>
+            <li class="mobile-menu__contscts-item">
+              <a
+                href="mailto:info@devstudio.com"
+                class="link mobile-menu__contacts-link mobile-menu__contacts-link--mail"
+                >info@devstudio.com</a
+              >
+            </li>
+          </ul>
+          <ul class="list mobile-menu__socials">
+            <li class="mobile-menu__socials-item">
+              <a href="https://www.instagram.com/" class="link mobile-menu__socials-link">Instagram</a>
+            </li>
+            <li class="mobile-menu__socials-item">
+              <a href="https://twitter.com/" class="link mobile-menu__socials-link">Twitter</a>
+            </li>
+            <li class="mobile-menu__socials-item">
+              <a href="https://www.facebook.com/" class="link mobile-menu__socials-link">Facebook</a>
+            </li>
+            <li class="mobile-menu__socials-item">
+              <a href="https://www.linkedin.com/" class="link mobile-menu__socials-link">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <main>
       <section class="section portfolio">
         <div class="container">
@@ -63,7 +110,62 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_1.jpg" width="370" height="294" alt="Technopark website" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img1_desktop.webp    1x,
+                        ./images/portfolio/desktop/img1_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img1_tablet.webp    1x,
+                        ./images/portfolio/tablet/img1_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img1_mobile.webp    1x,
+                        ./images/portfolio/mobile/img1_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img1_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img1_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img1_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img1_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img1_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img1_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="./images/portfolio/mobile/img1_mobile.jpg"
+                      width="450"
+                      height="294"
+                      alt="Technopark website"
+                    />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -78,7 +180,62 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_2.jpg" width="370" alt="Poster for basketball" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img2_desktop.webp    1x,
+                        ./images/portfolio/desktop/img2_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img2_tablet.webp    1x,
+                        ./images/portfolio/tablet/img2_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img2_mobile.webp    1x,
+                        ./images/portfolio/mobile/img2_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img2_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img2_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img2_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img2_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img2_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img2_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="./images/portfolio/mobile/img2_mobile.jpg"
+                      width="450"
+                      height="294"
+                      alt="Poster for basketball"
+                    />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -94,7 +251,62 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_3.jpg" width="370" alt="Restaurant's logo" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img3_desktop.webp    1x,
+                        ./images/portfolio/desktop/img3_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img3_tablet.webp    1x,
+                        ./images/portfolio/tablet/img3_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img3_mobile.webp    1x,
+                        ./images/portfolio/mobile/img3_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img3_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img3_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img3_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img3_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img3_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img3_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="./images/portfolio/mobile/img3_mobile.jpg"
+                      width="450"
+                      height="294"
+                      alt="Restaurant's logo"
+                    />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -110,7 +322,57 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_4.jpg" width="370" alt="Headphones" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img4_desktop.webp    1x,
+                        ./images/portfolio/desktop/img4_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img4_tablet.webp    1x,
+                        ./images/portfolio/tablet/img4_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img4_mobile.webp    1x,
+                        ./images/portfolio/mobile/img4_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img4_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img4_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img4_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img4_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img4_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img4_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img src="./images/portfolio/mobile/img4_mobile.jpg" width="450" height="294" alt="Headphones" />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -126,7 +388,57 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_5.jpg" width="370" alt="Two boxes" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img5_desktop.webp    1x,
+                        ./images/portfolio/desktop/img5_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img5_tablet.webp    1x,
+                        ./images/portfolio/tablet/img5_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img5_mobile.webp    1x,
+                        ./images/portfolio/mobile/img5_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img5_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img5_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img5_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img5_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img5_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img5_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img src="./images/portfolio/mobile/img5_mobile.jpg" width="450" height="294" alt="Two boxes" />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -142,7 +454,62 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_6.jpg" width="370" alt="Monitor with website's start page" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img6_desktop.webp    1x,
+                        ./images/portfolio/desktop/img6_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img6_tablet.webp    1x,
+                        ./images/portfolio/tablet/img6_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img6_mobile.webp    1x,
+                        ./images/portfolio/mobile/img6_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img6_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img6_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img6_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img6_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img6_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img6_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="./images/portfolio/mobile/img6_mobile.jpg"
+                      width="450"
+                      height="294"
+                      alt="Monitor with website's start page"
+                    />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -158,7 +525,62 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_7.jpg" width="370" alt="Magazine's page" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img7_desktop.webp    1x,
+                        ./images/portfolio/desktop/img7_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img7_tablet.webp    1x,
+                        ./images/portfolio/tablet/img7_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img7_mobile.webp    1x,
+                        ./images/portfolio/mobile/img7_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img7_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img7_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img7_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img7_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img7_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img7_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="./images/portfolio/mobile/img7_mobile.jpg"
+                      width="450"
+                      height="294"
+                      alt="Magazine's page"
+                    />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -174,7 +596,57 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_8.jpg" width="370" alt="Lab's logo" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img8_desktop.webp    1x,
+                        ./images/portfolio/desktop/img8_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img8_tablet.webp    1x,
+                        ./images/portfolio/tablet/img8_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img8_mobile.webp    1x,
+                        ./images/portfolio/mobile/img8_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img8_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img8_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img8_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img8_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img8_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img8_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img src="./images/portfolio/mobile/img8_mobile.jpg" width="450" height="294" alt="Lab's logo" />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -190,7 +662,62 @@
             <li class="portfolio__item card-set__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__thumb">
-                  <img src="./images/works/project_9.jpg" width="370" alt="Laptop with application's start page" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img9_desktop.webp    1x,
+                        ./images/portfolio/desktop/img9_desktop@2x.webp 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img9_tablet.webp    1x,
+                        ./images/portfolio/tablet/img9_tablet@2x.webp 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img9_mobile.webp    1x,
+                        ./images/portfolio/mobile/img9_mobile@2x.webp 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/webp"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/desktop/img9_desktop.jpg    1x,
+                        ./images/portfolio/desktop/img9_desktop@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/tablet/img9_tablet.jpg    1x,
+                        ./images/portfolio/tablet/img9_tablet@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                      type="image/jpeg"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/mobile/img9_mobile.jpg    1x,
+                        ./images/portfolio/mobile/img9_mobile@2x.jpg 2x
+                      "
+                      media="(max-width: 767.98px)"
+                      type="image/jpeg"
+                    />
+                    <img
+                      src="./images/portfolio/mobile/img9_mobile.jpg"
+                      width="450"
+                      height="294"
+                      alt="Laptop with application's start page"
+                    />
+                  </picture>
                   <p class="portfolio__overlay">
                     Technokryak is a modern platform for the spread of coronavirus. Companies use this platform for
                     digital espionage and attacks on competitors' secure servers.
@@ -207,13 +734,13 @@
         </div>
       </section>
     </main>
-    <!-- <footer class="footer">
+    <footer class="footer">
       <div class="container footer__info">
         <div class="footer__address">
           <a class="link logo logo--white logo--nohover logo--nofocus" href="./index.html"
             ><span class="logo--blue">Web</span>Studio</a
           >
-          <address class="address">
+          <address class="address" id="contacts">
             <ul class="list">
               <li class="address__item address__item--white">
                 <a class="link" href="https://goo.gl/maps/UTHVrbyp5F8tHb4Z7">Kiev, 26 Lesya Ukrainka Ave.</a>
@@ -231,28 +758,48 @@
           <h3 class="socials__title">Follow us</h3>
           <ul class="socials list">
             <li class="socials__item">
-              <a href="" class="socials__link socials__link--white link" target="_blank" rel="noreferrer noopener">
+              <a
+                href="https://www.instagram.com/"
+                class="socials__link socials__link--white link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <svg class="socials__icon" width="20" height="20">
                   <use href="./images/icons.svg#instagram"></use>
                 </svg>
               </a>
             </li>
             <li class="socials__item">
-              <a href="" class="socials__link socials__link--white link" target="_blank" rel="noreferrer noopener">
+              <a
+                href="https://twitter.com/"
+                class="socials__link socials__link--white link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <svg class="socials__icon" width="20" height="20">
                   <use href="./images/icons.svg#twitter"></use>
                 </svg>
               </a>
             </li>
             <li class="socials__item">
-              <a href="" class="socials__link socials__link--white link" target="_blank" rel="noreferrer noopener">
+              <a
+                href="https://www.facebook.com/"
+                class="socials__link socials__link--white link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <svg class="socials__icon" width="20" height="20">
                   <use href="./images/icons.svg#facebook"></use>
                 </svg>
               </a>
             </li>
             <li class="socials__item">
-              <a href="" class="socials__link socials__link--white link" target="_blank" rel="noreferrer noopener">
+              <a
+                href="https://www.linkedin.com/"
+                class="socials__link socials__link--white link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <svg class="socials__icon" width="20" height="20">
                   <use href="./images/icons.svg#linkedin"></use>
                 </svg>
@@ -273,6 +820,7 @@
           </form>
         </div>
       </div>
-    </footer> -->
+    </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

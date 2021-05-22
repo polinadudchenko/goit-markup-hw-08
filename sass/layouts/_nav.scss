@@ -9,6 +9,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  z-index: 100;
 
   @include for-tablet {
     display: none;
@@ -30,7 +32,8 @@
   }
 }
 
-.site-nav__button.is-open .site-nav__menu {
+.site-nav__button.is-open .site-nav__menu,
+.backdrop--is-hidden .site-nav__menu {
   display: none;
 }
 
