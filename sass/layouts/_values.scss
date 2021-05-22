@@ -29,7 +29,7 @@
   line-height: 1.14;
   text-transform: uppercase;
 
-  @media screen and (max-width: 767px) {
+  @include phone-and-tablet {
     text-align: center;
   }
 }

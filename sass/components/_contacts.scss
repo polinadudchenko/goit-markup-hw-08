@@ -1,5 +1,13 @@
 .contacts {
-  display: flex;
+  @include for-phone {
+    display: none;
+  }
+  @include for-tablet {
+    display: block;
+  }
+  @include for-desktop {
+    display: flex;
+  }
 }
 
 .header-contacts {
@@ -7,23 +15,57 @@
 }
 
 .contacts__item:not(:last-child) {
-  margin-right: 50px;
+  @include only-tablet {
+    margin-bottom: 10px;
+  }
+  @include for-desktop {
+    margin-right: 50px;
+  }
 }
 
 .contacts__link {
   display: flex;
   align-items: center;
-  padding-top: 32px;
-  padding-bottom: 31px;
-
   font-weight: 500;
-  line-height: 1.14;
   letter-spacing: 0.02em;
   color: $alt-text-color;
+
+  @include for-tablet {
+    font-size: 12px;
+    line-height: 1.17;
+  }
+  @include for-desktop {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-size: 14px;
+    line-height: 1.14;
+  }
 }
 
 .contacts__icon {
   display: inline-block;
   fill: currentColor;
   margin-right: 10px;
+}
+
+.contacts__icon--mail {
+  @include for-tablet {
+    width: 14px;
+    height: 10px;
+  }
+  @include for-desktop {
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.contacts__icon--tel {
+  @include for-tablet {
+    width: 10px;
+    height: 14px;
+  }
+  @include for-desktop {
+    width: 10px;
+    height: 16px;
+  }
 }

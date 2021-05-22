@@ -1,5 +1,23 @@
+.site-nav__button {
+  @include for-phone {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+  @include for-tablet {
+    display: none;
+  }
+}
+
 .site-nav__list {
-  display: flex;
+  @include for-phone {
+    display: none;
+  }
+  @include for-tablet {
+    display: flex;
+  }
 }
 
 .site-nav__item {
@@ -13,7 +31,7 @@
 .site-nav__link {
   display: block;
   padding-top: 32px;
-  padding-bottom: 31px;
+  padding-bottom: 32px;
 
   font-weight: 500;
   line-height: 1.14;

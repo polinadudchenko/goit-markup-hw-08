@@ -8,5 +8,11 @@
 }
 
 .header__logo {
-  margin-right: 93px;
+  @include only-tablet {
+    margin-right: 88px;
+  }
+
+  @include for-desktop {
+    margin-right: 93px;
+  }
 }
