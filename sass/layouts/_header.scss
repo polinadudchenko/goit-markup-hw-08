@@ -1,10 +1,14 @@
 .header {
+  position: relative;
   border-bottom: 1px solid #ececec;
 }
 
 .header__flex {
   display: flex;
   align-items: center;
+  @include only-phone {
+    justify-content: space-between;
+  }
 }
 
 .header__logo {

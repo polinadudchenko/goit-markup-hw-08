@@ -1,14 +1,37 @@
 .site-nav__button {
-  @include for-phone {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-  }
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
   @include for-tablet {
     display: none;
   }
+}
+
+.site-nav__svg {
+  transition: fill $animation;
+}
+.site-nav__button:hover .site-nav__svg {
+  fill: $accent-color;
+}
+
+.site-nav__close {
+  display: none;
+
+  .site-nav__button.is-open & {
+    display: block;
+  }
+}
+
+.site-nav__button.is-open .site-nav__menu {
+  display: none;
 }
 
 .site-nav__list {

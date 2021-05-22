@@ -1,5 +1,12 @@
 .portfolio__item {
-  flex-basis: calc((100% - 3 * #{$card-set-gap}) / 3);
+  width: 100%;
+  max-width: 450px;
+  @include for-tablet {
+    flex-basis: calc((100% - 2 * #{$card-set-gap}) / 2);
+  }
+  @include for-desktop {
+    flex-basis: calc((100% - 3 * #{$card-set-gap}) / 3);
+  }
 }
 
 .portfolio__link {

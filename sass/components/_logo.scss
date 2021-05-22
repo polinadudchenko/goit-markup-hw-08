@@ -1,11 +1,15 @@
 .logo {
   font-family: $logo-font;
   font-weight: 700;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   @include phone-and-tablet {
     font-size: 24px;
     line-height: 1.17;
+  }
+  @include for-tablet {
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
   @include for-desktop {
     font-size: 26px;

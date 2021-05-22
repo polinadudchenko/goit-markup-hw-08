@@ -9,13 +9,6 @@ body {
   color: $main-text-color;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: box-sizing;
-  outline: 1px solid red;
-}
-
 .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);

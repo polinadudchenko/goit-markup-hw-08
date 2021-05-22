@@ -5,6 +5,7 @@
   align-items: center;
 
   margin: 0;
+  width: 100%;
 }
 
 .request-form__title {
@@ -22,6 +23,7 @@
   position: relative;
   display: block;
   margin-bottom: 28px;
+  width: 100%;
 }
 
 .request-form__label {
@@ -47,14 +49,14 @@
 }
 
 .request-form__input {
-  display: block;
-  width: 448px;
+  display: block; /* 
+  width: 448px; */
+  width: 100%;
   height: 40px;
   padding-left: 40px;
   padding-right: 12px;
   color: $alt-text-color;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
   border-radius: 4px;
   transition: border-color $animation, outline $animation;
 
@@ -84,6 +86,7 @@
 
 .request-form__comment {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .form-comment__label {
@@ -110,7 +113,7 @@
 .form-comment__textarea {
   display: block;
   padding: 10px 12px;
-  width: 448px;
+  width: 100%;
   height: 120px;
 
   color: $alt-text-color;
@@ -157,10 +160,13 @@
 
 .checkbox__text {
   margin-left: 7px;
-  font-size: 14px;
-  line-height: 1.71;
-
+  font-size: 12px;
+  line-height: 1.17;
   color: $alt-text-color;
+  @include for-desktop {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
 .checkbox__link {

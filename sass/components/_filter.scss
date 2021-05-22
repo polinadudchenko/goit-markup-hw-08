@@ -1,14 +1,27 @@
 .filter {
   display: flex;
   justify-content: center;
-}
-
-.portfolio__filter {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+  @include only-phone {
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  @include for-tablet {
+    margin-bottom: 30px;
+  }
+  @include for-desktop {
+    margin-bottom: 50px;
+  }
 }
 
 .filter__item:not(:last-child) {
   margin-right: 8px;
+}
+
+.filter__item {
+  @include only-phone {
+    margin-bottom: 15px;
+  }
 }
 
 .filter__btn {
