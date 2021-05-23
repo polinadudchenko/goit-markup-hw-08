@@ -9,8 +9,8 @@ body {
   color: $main-text-color;
 }
 
-body.overflow-is-hiiden {
-  overflow-y: hidden;
+body.overflow-is-hidden {
+  overflow: hidden;
 }
 
 .visually-hidden {
