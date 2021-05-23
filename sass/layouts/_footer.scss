@@ -1,15 +1,18 @@
 .footer {
   background-color: $dark-bg;
 }
+
 .footer__info {
   padding-top: 60px;
   padding-bottom: 60px;
+
   @include for-tablet {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: baseline;
   }
+
   @include for-desktop {
     display: flex;
     justify-content: space-between;

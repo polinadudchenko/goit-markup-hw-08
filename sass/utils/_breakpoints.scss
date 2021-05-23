@@ -3,6 +3,7 @@
     @content;
   }
 }
+
 @mixin for-tablet {
   @media screen and (min-width: 768px) {
     @content;
@@ -17,6 +18,12 @@
 
 @mixin phone-and-tablet {
   @media screen and (max-width: 1199.98px) {
+    @content;
+  }
+}
+
+@mixin big-phone-screen {
+  @media screen and (min-width: 420px) {
     @content;
   }
 }
