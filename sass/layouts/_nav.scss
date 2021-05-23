@@ -27,7 +27,7 @@
   fill: $accent-color;
 }
 
-.site-nav__close {
+.site-nav__close-btn {
   display: none;
 
   .site-nav__button.is-open & {
@@ -38,8 +38,8 @@
   }
 }
 
-.site-nav__button.is-open .site-nav__menu,
-.backdrop--is-hidden .site-nav__menu {
+.site-nav__button.is-open .site-nav__menu-btn,
+.backdrop--is-hidden .site-nav__menu-btn {
   display: none;
 }
 
